@@ -1,109 +1,320 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KhanhTech | Software & Operating Systems</title>
+    <title>KhanhTech</title>
+
+    <!-- FAVICON: chỉ hiện cạnh tên trang/tab -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
 
     <meta
         name="description"
-        content="KhanhTech - Công ty phát triển phần mềm và hệ điều hành."
+        content="KhanhTech - Technology & Development"
     >
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #050505;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            padding: 0 28px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+
+            z-index: 1000;
+        }
+
+        .brand {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            color: #999;
+            font-size: 13px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            background: #00ff88;
+            border-radius: 50%;
+
+            box-shadow: 0 0 12px #00ff88;
+        }
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 100px 20px 50px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            font-weight: 800;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 18px;
+        }
+
+        .gradient {
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #777777,
+                #ffffff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #999;
+
+            font-size: 18px;
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 130px;
+
+            padding: 13px 22px;
+
+            border-radius: 12px;
+
+            color: white;
+            text-decoration: none;
+
+            background: rgba(255,255,255,.06);
+
+            border: 1px solid rgba(255,255,255,.12);
+
+            transition: .2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+
+            background: rgba(255,255,255,.12);
+
+            border-color: rgba(255,255,255,.25);
+        }
+
+        .button.primary {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+
+        .button.primary:hover {
+            background: #ddd;
+        }
+
+        .api-section {
+            padding: 80px 20px;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .api-card {
+            width: min(700px, 100%);
+
+            padding: 28px;
+
+            border-radius: 20px;
+
+            background: #0d0d0d;
+
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .api-card h2 {
+            margin-bottom: 10px;
+        }
+
+        .api-card p {
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .api-status {
+            padding: 16px;
+
+            border-radius: 12px;
+
+            background: #080808;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            font-family: Consolas, monospace;
+
+            font-size: 14px;
+
+            white-space: pre-wrap;
+
+            word-break: break-word;
+        }
+
+        footer {
+            padding: 30px 20px;
+
+            text-align: center;
+
+            color: #666;
+
+            border-top: 1px solid rgba(255,255,255,.06);
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 0 16px;
+            }
+
+            .status {
+                display: none;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .api-card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
-    <header class="navbar">
-        <div class="nav-container">
+    <nav class="navbar">
 
-            <a href="/" class="logo">
-                KHANHTECH
-            </a>
+        <a href="#" class="brand">
+            KhanhTech
+        </a>
 
-            <nav class="nav-menu">
-                <a href="#products">Sản phẩm</a>
-                <a href="#khanhos">KhanhOS</a>
-                <a href="#developers">Developers</a>
-                <a href="#roadmap">Roadmap</a>
-                <a href="#support">Hỗ trợ</a>
-            </nav>
+        <div class="status">
 
-            <div class="nav-actions">
-                <a href="/download.html" class="btn btn-primary">
-                    Tải xuống
-                </a>
+            <span class="status-dot"></span>
 
-                <a href="/login.html" class="btn btn-secondary">
-                    Đăng nhập
-                </a>
-            </div>
+            <span id="navStatus">
+                Checking...
+            </span>
 
         </div>
-    </header>
+
+    </nav>
 
 
     <main>
 
-        <!-- =========================
-             HERO
-        ========================== -->
         <section class="hero">
 
             <div class="hero-content">
 
-                <span class="hero-badge">
-                    KHANHTECH
-                </span>
-
                 <h1>
-                    Build the future
-                    <span>of software.</span>
+                    <span class="gradient">
+                        KhanhTech
+                    </span>
                 </h1>
 
                 <p>
-                    KhanhTech phát triển phần mềm và hệ điều hành
-                    hiện đại dành cho mọi người.
+                    Technology • Development • Innovation
+                    <br>
+                    Chào mừng đến với hệ sinh thái KhanhTech.
                 </p>
 
-                <div class="hero-buttons">
+                <div class="buttons">
 
-                    <a href="/khanhos.html" class="btn btn-primary">
-                        Khám phá KhanhOS
+                    <a
+                        class="button primary"
+                        href="https://github.com/khanhTechvn"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        GitHub
                     </a>
 
-                    <a href="#products" class="btn btn-secondary">
-                        Xem sản phẩm
+                    <a
+                        class="button"
+                        href="#api"
+                    >
+                        Backend
                     </a>
 
-                </div>
-
-            </div>
-
-            <div class="hero-preview">
-
-                <div class="os-window">
-
-                    <div class="window-top">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-
-                    <div class="window-content">
-                        <div class="fake-sidebar"></div>
-
-                        <div class="fake-desktop">
-                            <div class="fake-card"></div>
-                            <div class="fake-card"></div>
-                            <div class="fake-card"></div>
-                        </div>
-                    </div>
+                    <a
+                        class="button"
+                        href="https://khanhtech-backend.vercel.app"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        API
+                    </a>
 
                 </div>
 
@@ -112,429 +323,27 @@
         </section>
 
 
-        <!-- =========================
-             PRODUCTS
-        ========================== -->
-        <section id="products" class="section">
+        <section
+            class="api-section"
+            id="api"
+        >
 
-            <div class="section-header">
-
-                <span class="section-label">
-                    PRODUCTS
-                </span>
+            <div class="api-card">
 
                 <h2>
-                    KhanhTech Ecosystem
+                    Backend Status
                 </h2>
 
                 <p>
-                    Những sản phẩm đang được phát triển
-                    trong hệ sinh thái KhanhTech.
+                    Trạng thái KhanhTech Backend
                 </p>
 
-            </div>
-
-
-            <div class="product-grid">
-
-                <article class="product-card">
-
-                    <div class="product-icon">
-                        OS
-                    </div>
-
-                    <h3>
-                        KhanhOS
-                    </h3>
-
-                    <p>
-                        Hệ điều hành hiện đại, nhẹ và dễ sử dụng.
-                    </p>
-
-                    <a href="/khanhos.html">
-                        Khám phá →
-                    </a>
-
-                </article>
-
-
-                <article class="product-card">
-
-                    <div class="product-icon">
-                        AI
-                    </div>
-
-                    <h3>
-                        KhanhAI
-                    </h3>
-
-                    <p>
-                        Nền tảng AI được phát triển bởi KhanhTech.
-                    </p>
-
-                    <a href="#">
-                        Sắp ra mắt →
-                    </a>
-
-                </article>
-
-
-                <article class="product-card">
-
-                    <div class="product-icon">
-                        CL
-                    </div>
-
-                    <h3>
-                        KhanhCloud
-                    </h3>
-
-                    <p>
-                        Dịch vụ cloud cho hệ sinh thái KhanhTech.
-                    </p>
-
-                    <a href="#">
-                        Sắp ra mắt →
-                    </a>
-
-                </article>
-
-
-                <article class="product-card">
-
-                    <div class="product-icon">
-                        ST
-                    </div>
-
-                    <h3>
-                        KhanhStore
-                    </h3>
-
-                    <p>
-                        Kho ứng dụng dành cho KhanhOS.
-                    </p>
-
-                    <a href="#">
-                        Sắp ra mắt →
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             KHANHOS
-        ========================== -->
-        <section id="khanhos" class="section khanhos-section">
-
-            <div class="section-header">
-
-                <span class="section-label">
-                    KHANHOS
-                </span>
-
-                <h2>
-                    Your computer.
-                    <span>Your system.</span>
-                </h2>
-
-                <p>
-                    KhanhOS là hệ điều hành chủ lực
-                    của KhanhTech.
-                </p>
-
-            </div>
-
-
-            <div class="khanhos-preview">
-
-                <div class="os-placeholder">
-
-                    <div class="placeholder-title">
-                        KHANHOS
-                    </div>
-
-                    <div class="placeholder-text">
-                        Desktop Preview
-                    </div>
-
+                <div
+                    class="api-status"
+                    id="apiStatus"
+                >
+                    Đang kiểm tra API...
                 </div>
-
-            </div>
-
-
-            <div class="center-button">
-
-                <a href="/khanhos.html" class="btn btn-primary">
-                    Tìm hiểu KhanhOS
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             WHY KHANHTECH
-        ========================== -->
-        <section class="section">
-
-            <div class="section-header">
-
-                <span class="section-label">
-                    WHY KHANHTECH
-                </span>
-
-                <h2>
-                    Technology made simple.
-                </h2>
-
-            </div>
-
-
-            <div class="features-grid">
-
-                <div class="feature">
-                    <div class="feature-icon">
-                        ⚡
-                    </div>
-
-                    <h3>
-                        Hiệu năng
-                    </h3>
-
-                    <p>
-                        Tối ưu phần mềm để sử dụng tài nguyên
-                        hiệu quả.
-                    </p>
-                </div>
-
-
-                <div class="feature">
-                    <div class="feature-icon">
-                        🔒
-                    </div>
-
-                    <h3>
-                        Bảo mật
-                    </h3>
-
-                    <p>
-                        Đặt bảo mật và quyền riêng tư
-                        làm trọng tâm.
-                    </p>
-                </div>
-
-
-                <div class="feature">
-                    <div class="feature-icon">
-                        🎨
-                    </div>
-
-                    <h3>
-                        Hiện đại
-                    </h3>
-
-                    <p>
-                        Giao diện đơn giản, đẹp và dễ sử dụng.
-                    </p>
-                </div>
-
-
-                <div class="feature">
-                    <div class="feature-icon">
-                        🚀
-                    </div>
-
-                    <h3>
-                        Đổi mới
-                    </h3>
-
-                    <p>
-                        Liên tục phát triển những công nghệ
-                        mới.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ROADMAP
-        ========================== -->
-        <section id="roadmap" class="section">
-
-            <div class="section-header">
-
-                <span class="section-label">
-                    ROADMAP
-                </span>
-
-                <h2>
-                    The journey starts here.
-                </h2>
-
-            </div>
-
-
-            <div class="roadmap">
-
-                <div class="roadmap-item active">
-
-                    <span class="roadmap-year">
-                        2026
-                    </span>
-
-                    <h3>
-                        KhanhOS Prototype
-                    </h3>
-
-                    <p>
-                        Xây dựng phiên bản thử nghiệm đầu tiên.
-                    </p>
-
-                </div>
-
-
-                <div class="roadmap-item">
-
-                    <span class="roadmap-year">
-                        2027
-                    </span>
-
-                    <h3>
-                        KhanhOS Beta
-                    </h3>
-
-                    <p>
-                        Mở rộng tính năng và cộng đồng thử nghiệm.
-                    </p>
-
-                </div>
-
-
-                <div class="roadmap-item">
-
-                    <span class="roadmap-year">
-                        2028
-                    </span>
-
-                    <h3>
-                        KhanhOS Stable
-                    </h3>
-
-                    <p>
-                        Phiên bản ổn định đầu tiên.
-                    </p>
-
-                </div>
-
-
-                <div class="roadmap-item">
-
-                    <span class="roadmap-year">
-                        2029
-                    </span>
-
-                    <h3>
-                        KhanhTech Ecosystem
-                    </h3>
-
-                    <p>
-                        Mở rộng hệ sinh thái phần mềm.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             DEVELOPERS
-        ========================== -->
-        <section id="developers" class="section developer-section">
-
-            <div class="developer-content">
-
-                <span class="section-label">
-                    DEVELOPERS
-                </span>
-
-                <h2>
-                    Build with KhanhTech.
-                </h2>
-
-                <p>
-                    Tài liệu, API và công cụ dành cho
-                    nhà phát triển.
-                </p>
-
-                <a href="/developers.html" class="btn btn-primary">
-                    Developer Portal
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             SUPPORT
-        ========================== -->
-        <section id="support" class="section support-section">
-
-            <div class="section-header">
-
-                <span class="section-label">
-                    SUPPORT
-                </span>
-
-                <h2>
-                    Need help?
-                </h2>
-
-                <p>
-                    Trung tâm hỗ trợ KhanhTech.
-                </p>
-
-            </div>
-
-            <div class="center-button">
-
-                <a href="/support.html" class="btn btn-secondary">
-                    Trung tâm hỗ trợ
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CTA
-        ========================== -->
-        <section class="cta">
-
-            <div class="cta-content">
-
-                <h2>
-                    Ready for KhanhOS?
-                </h2>
-
-                <p>
-                    Trải nghiệm hệ điều hành của KhanhTech.
-                </p>
-
-                <a href="/download.html" class="btn btn-primary">
-                    Download KhanhOS
-                </a>
 
             </div>
 
@@ -543,123 +352,102 @@
     </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-    <footer class="footer">
-
-        <div class="footer-container">
-
-            <div class="footer-brand">
-
-                <div class="logo">
-                    KHANHTECH
-                </div>
-
-                <p>
-                    Software & Operating Systems
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    Products
-                </h4>
-
-                <a href="/khanhos.html">
-                    KhanhOS
-                </a>
-
-                <a href="#">
-                    KhanhAI
-                </a>
-
-                <a href="#">
-                    KhanhCloud
-                </a>
-
-                <a href="#">
-                    KhanhStore
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    Developers
-                </h4>
-
-                <a href="#">
-                    Documentation
-                </a>
-
-                <a href="#">
-                    API
-                </a>
-
-                <a href="#">
-                    GitHub
-                </a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>
-                    Company
-                </h4>
-
-                <a href="/about.html">
-                    About
-                </a>
-
-                <a href="/roadmap.html">
-                    Roadmap
-                </a>
-
-                <a href="#">
-                    Blog
-                </a>
-
-                <a href="/support.html">
-                    Support
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 KhanhTech. All rights reserved.
-            </span>
-
-            <div>
-
-                <a href="#">
-                    Privacy
-                </a>
-
-                <a href="#">
-                    Terms
-                </a>
-
-            </div>
-
-        </div>
-
+    <footer>
+        © 2026 KhanhTech. All rights reserved.
     </footer>
 
 
-    <script src="script.js"></script>
+    <script>
+
+        const API_URL =
+            "https://khanhtech-backend.vercel.app";
+
+
+        async function checkBackend() {
+
+            const navStatus =
+                document.getElementById("navStatus");
+
+            const apiStatus =
+                document.getElementById("apiStatus");
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        API_URL + "/api/health"
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (
+                    response.ok &&
+                    data.online === true &&
+                    data.database === "connected"
+                ) {
+
+                    navStatus.textContent =
+                        "Online";
+
+
+                    apiStatus.textContent =
+                        JSON.stringify(
+                            data,
+                            null,
+                            2
+                        );
+
+                } else {
+
+                    navStatus.textContent =
+                        "Database Error";
+
+
+                    apiStatus.textContent =
+                        JSON.stringify(
+                            data,
+                            null,
+                            2
+                        );
+
+                }
+
+
+            } catch (error) {
+
+                navStatus.textContent =
+                    "Offline";
+
+
+                apiStatus.textContent =
+                    JSON.stringify(
+                        {
+                            online: false,
+                            error: error.message
+                        },
+                        null,
+                        2
+                    );
+
+            }
+
+        }
+
+
+        checkBackend();
+
+
+        setInterval(
+            checkBackend,
+            30000
+        );
+
+    </script>
 
 </body>
 </html>
+```
