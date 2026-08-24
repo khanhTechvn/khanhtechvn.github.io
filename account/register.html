@@ -4,43 +4,288 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tạo tài khoản | KhanhTech</title>
+    <title>Đăng ký | KhanhTech</title>
 
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="account.css">
+
+    <style>
+        .register-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px;
+        }
+
+        .register-box {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .register-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .register-logo {
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: var(--gradient);
+            color: white;
+
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .register-header h1 {
+            margin-bottom: 10px;
+            font-size: 34px;
+        }
+
+        .register-header p {
+            color: var(--text-secondary);
+        }
+
+        .register-card {
+            padding: 32px;
+
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            box-shadow:
+                0 25px 80px rgba(0,0,0,.12);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .form-input {
+            width: 100%;
+            height: 50px;
+
+            padding: 0 15px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 12px;
+
+            outline: none;
+
+            background:
+                var(--bg-secondary);
+
+            color:
+                var(--text);
+
+            font-size: 14px;
+        }
+
+        .form-input:focus {
+            border-color:
+                var(--accent);
+
+            box-shadow:
+                0 0 0 4px
+                rgba(109,93,252,.1);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 55px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+
+            transform:
+                translateY(-50%);
+
+            border: none;
+            background: transparent;
+
+            cursor: pointer;
+        }
+
+        .password-strength {
+            margin-top: 8px;
+
+            height: 4px;
+
+            border-radius: 10px;
+
+            background:
+                var(--border);
+
+            overflow: hidden;
+        }
+
+        .password-strength div {
+            height: 100%;
+            width: 0;
+
+            transition: .25s;
+        }
+
+        .terms {
+            display: flex;
+            gap: 8px;
+
+            margin: 20px 0;
+
+            color:
+                var(--text-secondary);
+
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .terms input {
+            margin-top: 3px;
+            accent-color: var(--accent);
+        }
+
+        .terms a {
+            color: var(--accent);
+        }
+
+        .register-button {
+            width: 100%;
+            height: 50px;
+
+            border: none;
+            border-radius: 12px;
+
+            background:
+                var(--gradient);
+
+            color: white;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .register-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 12px 30px
+                rgba(109,93,252,.25);
+        }
+
+        .message {
+            display: none;
+
+            margin-bottom: 18px;
+            padding: 12px;
+
+            border-radius: 10px;
+
+            background:
+                rgba(109,93,252,.1);
+
+            font-size: 13px;
+        }
+
+        .login-link {
+            text-align: center;
+
+            margin-top: 22px;
+
+            font-size: 13px;
+
+            color:
+                var(--text-secondary);
+        }
+
+        .login-link a {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        @media(max-width:500px) {
+            .register-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <header class="navbar">
+<header class="navbar">
 
-        <div class="nav-container">
+    <div class="nav-container">
 
-            <a href="../index.html" class="logo">
-                KHANHTECH
+        <a
+            href="../index.html"
+            class="logo"
+        >
+            KHANHTECH
+        </a>
+
+        <nav class="nav-menu">
+
+            <a href="../index.html">
+                Trang chủ
             </a>
 
-            <div class="nav-actions">
+            <a href="../khanhos.html">
+                Khám phá
+            </a>
 
-                <a
-                    href="login.html"
-                    class="btn btn-secondary"
-                >
-                    Đăng nhập
-                </a>
+        </nav>
 
-            </div>
+        <div class="nav-actions">
+
+            <a
+                href="login.html"
+                class="btn btn-secondary"
+            >
+                Đăng nhập
+            </a>
 
         </div>
 
-    </header>
+    </div>
+
+</header>
 
 
-    <main class="account-page">
+<main class="register-page">
 
-        <section class="account-card register-card">
+    <div class="register-box">
 
-            <div class="account-logo">
+        <div class="register-header">
+
+            <div class="register-logo">
                 K
             </div>
 
@@ -48,9 +293,19 @@
                 Tạo tài khoản
             </h1>
 
-            <p class="account-subtitle">
-                Tạo KhanhTech Account miễn phí
+            <p>
+                Tham gia hệ sinh thái KhanhTech
             </p>
+
+        </div>
+
+
+        <div class="register-card">
+
+            <div
+                id="message"
+                class="message"
+            ></div>
 
 
             <form id="registerForm">
@@ -63,12 +318,11 @@
 
                     <input
                         id="name"
+                        class="form-input"
                         type="text"
-                        placeholder="Tên của bạn"
+                        placeholder="Khanh"
+                        maxlength="40"
                         required
-                        minlength="2"
-                        maxlength="50"
-                        autocomplete="name"
                     >
 
                 </div>
@@ -77,15 +331,16 @@
                 <div class="form-group">
 
                     <label for="email">
-                        Email
+                        Gmail
                     </label>
 
                     <input
                         id="email"
+                        class="form-input"
                         type="email"
-                        placeholder="you@example.com"
-                        required
+                        placeholder="example@gmail.com"
                         autocomplete="email"
+                        required
                     >
 
                 </div>
@@ -97,14 +352,31 @@
                         Mật khẩu
                     </label>
 
-                    <input
-                        id="password"
-                        type="password"
-                        placeholder="Ít nhất 8 ký tự"
-                        required
-                        minlength="8"
-                        autocomplete="new-password"
-                    >
+                    <div class="password-wrapper">
+
+                        <input
+                            id="password"
+                            class="form-input"
+                            type="password"
+                            placeholder="Tạo mật khẩu"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showPassword"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                    <div class="password-strength">
+                        <div id="strengthBar"></div>
+                    </div>
 
                 </div>
 
@@ -112,16 +384,17 @@
                 <div class="form-group">
 
                     <label for="confirmPassword">
-                        Nhập lại mật khẩu
+                        Xác nhận mật khẩu
                     </label>
 
                     <input
                         id="confirmPassword"
+                        class="form-input"
                         type="password"
                         placeholder="Nhập lại mật khẩu"
-                        required
-                        minlength="8"
                         autocomplete="new-password"
+                        minlength="8"
+                        required
                     >
 
                 </div>
@@ -143,7 +416,8 @@
                         và
                         <a href="#">
                             Chính sách bảo mật
-                        </a>.
+                        </a>
+                        của KhanhTech.
                     </span>
 
                 </label>
@@ -151,7 +425,7 @@
 
                 <button
                     type="submit"
-                    class="account-submit"
+                    class="register-button"
                 >
                     Tạo tài khoản
                 </button>
@@ -159,13 +433,7 @@
             </form>
 
 
-            <div
-                id="registerMessage"
-                class="account-message"
-            ></div>
-
-
-            <div class="account-register">
+            <div class="login-link">
 
                 Đã có tài khoản?
 
@@ -175,13 +443,186 @@
 
             </div>
 
-        </section>
+        </div>
 
-    </main>
+    </div>
+
+</main>
 
 
-    <script src="../script.js"></script>
-    <script src="account.js"></script>
+<script>
+
+const form =
+    document.getElementById("registerForm");
+
+const message =
+    document.getElementById("message");
+
+const password =
+    document.getElementById("password");
+
+const confirmPassword =
+    document.getElementById("confirmPassword");
+
+const strengthBar =
+    document.getElementById("strengthBar");
+
+const showPassword =
+    document.getElementById("showPassword");
+
+
+/* HIỆN MẬT KHẨU */
+
+showPassword.addEventListener(
+    "click",
+    () => {
+
+        const visible =
+            password.type === "text";
+
+        password.type =
+            visible ? "password" : "text";
+
+        confirmPassword.type =
+            visible ? "password" : "text";
+
+        showPassword.textContent =
+            visible ? "👁" : "🙈";
+
+    }
+);
+
+
+/* ĐÁNH GIÁ MẬT KHẨU */
+
+password.addEventListener(
+    "input",
+    () => {
+
+        const value =
+            password.value;
+
+        let score = 0;
+
+        if (value.length >= 8)
+            score++;
+
+        if (/[A-Z]/.test(value))
+            score++;
+
+        if (/[0-9]/.test(value))
+            score++;
+
+        if (/[^A-Za-z0-9]/.test(value))
+            score++;
+
+
+        const widths =
+            ["0%", "25%", "50%", "75%", "100%"];
+
+        strengthBar.style.width =
+            widths[score];
+
+    }
+);
+
+
+/* ĐĂNG KÝ */
+
+form.addEventListener(
+    "submit",
+    async (event) => {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name")
+                .value.trim();
+
+        const email =
+            document.getElementById("email")
+                .value.trim();
+
+        const passwordValue =
+            password.value;
+
+        const confirmValue =
+            confirmPassword.value;
+
+
+        if (
+            !email.toLowerCase()
+                .endsWith("@gmail.com")
+        ) {
+
+            message.style.display =
+                "block";
+
+            message.textContent =
+                "Vui lòng sử dụng địa chỉ Gmail.";
+
+            return;
+        }
+
+
+        if (
+            passwordValue !==
+            confirmValue
+        ) {
+
+            message.style.display =
+                "block";
+
+            message.textContent =
+                "Hai mật khẩu không giống nhau.";
+
+            return;
+        }
+
+
+        if (
+            passwordValue.length < 8
+        ) {
+
+            message.style.display =
+                "block";
+
+            message.textContent =
+                "Mật khẩu phải có ít nhất 8 ký tự.";
+
+            return;
+        }
+
+
+        /*
+         * CHƯA CÓ BACKEND
+         *
+         * Sau này thay đoạn này bằng:
+         *
+         * fetch("https://api.khanhtechvn.github.io/auth/register", {
+         *     method: "POST",
+         *     headers: {
+         *         "Content-Type": "application/json"
+         *     },
+         *     body: JSON.stringify({
+         *         name,
+         *         email,
+         *         password: passwordValue
+         *     })
+         * })
+         */
+
+        message.style.display =
+            "block";
+
+        message.textContent =
+            "Thông tin hợp lệ. Bước tiếp theo sẽ gửi mã OTP 6 số tới Gmail của bạn.";
+
+    }
+);
+
+</script>
 
 </body>
 </html>
