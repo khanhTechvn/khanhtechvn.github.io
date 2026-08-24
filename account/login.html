@@ -2,7 +2,10 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Đăng nhập | KhanhTech</title>
 
@@ -11,120 +14,169 @@
         content="Đăng nhập KhanhTech Account"
     >
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
+        /* ========================================
+           LOGIN PAGE
+        ======================================== */
 
         .login-page {
-            flex: 1;
+            min-height: 100vh;
+
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 120px 20px 60px;
+
+            padding:
+                130px 20px 70px;
         }
+
 
         .login-container {
             width: 100%;
             max-width: 430px;
         }
 
+
+        /* ========================================
+           HEADER
+        ======================================== */
+
         .login-header {
             text-align: center;
+
             margin-bottom: 30px;
         }
 
+
         .login-logo {
-            width: 58px;
-            height: 58px;
-            margin: 0 auto 20px;
+            width: 64px;
+            height: 64px;
+
+            margin:
+                0 auto 20px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 18px;
+            border-radius: 20px;
 
-            background: var(--gradient);
+            background:
+                var(--gradient);
+
             color: white;
 
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 900;
 
             box-shadow:
-                0 15px 40px
-                rgba(109, 93, 252, 0.25);
+                0 15px 45px
+                rgba(109, 93, 252, .25);
         }
 
+
         .login-header h1 {
-            margin: 0 0 10px;
-            font-size: 34px;
-            letter-spacing: -1.5px;
+            margin:
+                0 0 10px;
+
+            font-size:
+                clamp(30px, 5vw, 38px);
+
+            letter-spacing:
+                -1.8px;
         }
+
 
         .login-header p {
             margin: 0;
-            color: var(--text-secondary);
-            font-size: 14px;
+
+            color:
+                var(--text-secondary);
+
+            font-size:
+                14px;
         }
 
+
+        /* ========================================
+           CARD
+        ======================================== */
+
         .login-card {
-            padding: 32px;
+            padding:
+                32px;
 
             border:
                 1px solid
                 var(--border);
 
-            border-radius: 24px;
+            border-radius:
+                24px;
 
             background:
                 var(--surface);
 
             box-shadow:
-                0 25px 80px
-                rgba(0, 0, 0, 0.12);
+                0 30px 90px
+                rgba(0, 0, 0, .12);
         }
+
+
+        /* ========================================
+           FORM
+        ======================================== */
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom:
+                20px;
         }
+
 
         .form-group label {
-            display: block;
-            margin-bottom: 8px;
+            display:
+                block;
 
-            color: var(--text);
+            margin-bottom:
+                8px;
 
-            font-size: 13px;
-            font-weight: 700;
+            color:
+                var(--text);
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
         }
+
 
         .input-wrapper {
-            position: relative;
+            position:
+                relative;
         }
 
-        .form-input {
-            width: 100%;
-            height: 50px;
 
-            padding: 0 15px;
+        .form-input {
+            width:
+                100%;
+
+            height:
+                52px;
+
+            padding:
+                0 15px;
 
             border:
                 1px solid
                 var(--border);
 
-            border-radius: 12px;
+            border-radius:
+                12px;
 
-            outline: none;
+            outline:
+                none;
 
             background:
                 var(--bg-secondary);
@@ -132,10 +184,22 @@
             color:
                 var(--text);
 
-            font-size: 14px;
+            font-family:
+                inherit;
 
-            transition: 0.2s ease;
+            font-size:
+                14px;
+
+            transition:
+                .2s ease;
         }
+
+
+        .form-input::placeholder {
+            color:
+                var(--text-muted);
+        }
+
 
         .form-input:focus {
             border-color:
@@ -143,504 +207,856 @@
 
             box-shadow:
                 0 0 0 4px
-                rgba(109, 93, 252, 0.10);
+                rgba(109, 93, 252, .10);
         }
+
 
         .password-input {
-            padding-right: 55px;
+            padding-right:
+                55px;
         }
 
-        .password-toggle {
-            position: absolute;
 
-            right: 10px;
-            top: 50%;
+        /* ========================================
+           PASSWORD BUTTON
+        ======================================== */
+
+        .password-toggle {
+            position:
+                absolute;
+
+            right:
+                8px;
+
+            top:
+                50%;
 
             transform:
                 translateY(-50%);
 
-            border: none;
-            background: transparent;
+            width:
+                40px;
+
+            height:
+                40px;
+
+            border:
+                none;
+
+            background:
+                transparent;
 
             color:
                 var(--text-muted);
 
-            cursor: pointer;
+            cursor:
+                pointer;
 
-            padding: 8px;
+            border-radius:
+                10px;
 
-            font-size: 15px;
+            font-size:
+                16px;
         }
 
+
         .password-toggle:hover {
+            background:
+                var(--bg-secondary);
+
             color:
                 var(--text);
         }
 
+
+        /* ========================================
+           OPTIONS
+        ======================================== */
+
         .form-options {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            display:
+                flex;
 
-            margin: 5px 0 22px;
+            align-items:
+                center;
 
-            font-size: 12px;
+            justify-content:
+                space-between;
+
+            margin:
+                3px 0 22px;
+
+            font-size:
+                12px;
         }
 
+
         .remember {
-            display: flex;
-            align-items: center;
-            gap: 7px;
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                7px;
 
             color:
                 var(--text-secondary);
 
-            cursor: pointer;
+            cursor:
+                pointer;
         }
+
 
         .remember input {
             accent-color:
                 var(--accent);
         }
 
+
         .forgot {
             color:
                 var(--accent);
 
-            text-decoration: none;
+            text-decoration:
+                none;
         }
+
 
         .forgot:hover {
-            text-decoration: underline;
+            text-decoration:
+                underline;
         }
 
-        .login-button {
-            width: 100%;
-            height: 50px;
 
-            border: none;
-            border-radius: 12px;
+        /* ========================================
+           LOGIN BUTTON
+        ======================================== */
+
+        .login-button {
+            width:
+                100%;
+
+            height:
+                52px;
+
+            border:
+                none;
+
+            border-radius:
+                12px;
 
             background:
                 var(--gradient);
 
-            color: white;
+            color:
+                white;
 
-            font-size: 14px;
-            font-weight: 800;
+            font-family:
+                inherit;
 
-            cursor: pointer;
+            font-size:
+                14px;
+
+            font-weight:
+                800;
+
+            cursor:
+                pointer;
 
             transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
+                .2s ease;
         }
+
 
         .login-button:hover {
             transform:
                 translateY(-2px);
 
             box-shadow:
-                0 12px 30px
-                rgba(109, 93, 252, 0.25);
+                0 14px 35px
+                rgba(109, 93, 252, .25);
         }
+
 
         .login-button:active {
             transform:
                 translateY(0);
         }
 
+
+        /* ========================================
+           MESSAGE
+        ======================================== */
+
         .login-message {
-            display: none;
+            display:
+                none;
 
-            margin-bottom: 18px;
-            padding: 12px 14px;
+            margin-bottom:
+                18px;
 
-            border-radius: 10px;
+            padding:
+                13px 14px;
+
+            border-radius:
+                11px;
 
             background:
-                rgba(109, 93, 252, 0.10);
+                rgba(109, 93, 252, .10);
+
+            border:
+                1px solid
+                rgba(109, 93, 252, .15);
 
             color:
                 var(--text);
 
-            font-size: 13px;
-            line-height: 1.5;
+            font-size:
+                13px;
+
+            line-height:
+                1.5;
         }
 
-        .divider {
-            display: flex;
-            align-items: center;
-            gap: 12px;
 
-            margin: 25px 0;
+        /* ========================================
+           DIVIDER
+        ======================================== */
+
+        .divider {
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                12px;
+
+            margin:
+                25px 0;
 
             color:
                 var(--text-muted);
 
-            font-size: 11px;
+            font-size:
+                10px;
+
+            font-weight:
+                700;
         }
+
 
         .divider::before,
         .divider::after {
-            content: "";
+            content:
+                "";
 
-            flex: 1;
+            flex:
+                1;
 
-            height: 1px;
+            height:
+                1px;
 
             background:
                 var(--border);
         }
 
+
+        /* ========================================
+           REGISTER
+        ======================================== */
+
         .register-text {
-            text-align: center;
+            text-align:
+                center;
 
             color:
                 var(--text-secondary);
 
-            font-size: 13px;
+            font-size:
+                13px;
         }
+
 
         .register-text a {
             color:
                 var(--accent);
 
-            font-weight: 700;
-            text-decoration: none;
+            font-weight:
+                800;
+
+            text-decoration:
+                none;
         }
+
 
         .register-text a:hover {
-            text-decoration: underline;
+            text-decoration:
+                underline;
         }
 
-        .security-note {
-            margin-top: 20px;
 
-            text-align: center;
+        /* ========================================
+           SECURITY
+        ======================================== */
+
+        .security-note {
+            margin-top:
+                20px;
+
+            text-align:
+                center;
 
             color:
                 var(--text-muted);
 
-            font-size: 11px;
-            line-height: 1.5;
+            font-size:
+                11px;
+
+            line-height:
+                1.5;
         }
 
+
+        /* ========================================
+           MOBILE
+        ======================================== */
+
         @media (max-width: 500px) {
+
+            .login-page {
+                padding:
+                    110px 14px 50px;
+            }
+
             .login-card {
-                padding: 24px 20px;
+                padding:
+                    24px 20px;
             }
 
             .login-header h1 {
-                font-size: 29px;
+                font-size:
+                    30px;
             }
+
         }
     </style>
 </head>
 
+
 <body>
 
-    <!-- NAVBAR -->
 
-    <header class="navbar">
-        <div class="nav-container">
+<!-- =========================================
+     NAVBAR
+========================================= -->
 
-            <a
-                href="../index.html"
-                class="logo"
-            >
-                KHANHTECH
+<header class="navbar">
+
+    <div class="nav-container">
+
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            KHANHTECH
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="index.html">
+                Trang chủ
             </a>
 
-            <nav class="nav-menu">
+            <a href="khanhos.html">
+                Khám phá
+            </a>
 
-                <a href="../index.html">
-                    Trang chủ
-                </a>
+        </nav>
 
-                <a href="../khanhos.html">
-                    Khám phá
-                </a>
 
-            </nav>
+        <div class="nav-actions">
 
-            <div class="nav-actions">
-                <a
-                    href="register.html"
-                    class="btn btn-secondary"
-                >
-                    Đăng ký
-                </a>
-            </div>
+            <a
+                href="register.html"
+                class="btn btn-secondary"
+            >
+                Đăng ký
+            </a>
 
         </div>
-    </header>
+
+    </div>
+
+</header>
 
 
-    <!-- LOGIN -->
 
-    <main class="login-page">
+<!-- =========================================
+     LOGIN
+========================================= -->
 
-        <div class="login-container">
+<main class="login-page">
 
-            <div class="login-header">
+    <div class="login-container">
 
-                <div class="login-logo">
-                    K
-                </div>
 
-                <h1>
-                    Chào mừng trở lại
-                </h1>
+        <!-- HEADER -->
 
-                <p>
-                    Đăng nhập vào KhanhTech Account
-                </p>
+        <div class="login-header">
 
+            <div class="login-logo">
+                K
             </div>
 
+            <h1>
+                Chào mừng trở lại
+            </h1>
 
-            <div class="login-card">
+            <p>
+                Đăng nhập vào KhanhTech Account
+            </p>
 
-                <div
-                    id="loginMessage"
-                    class="login-message"
-                ></div>
+        </div>
 
 
-                <form id="loginForm">
 
-                    <!-- EMAIL -->
+        <!-- CARD -->
 
-                    <div class="form-group">
+        <div class="login-card">
 
-                        <label for="email">
-                            Email
-                        </label>
+
+            <!-- MESSAGE -->
+
+            <div
+                id="loginMessage"
+                class="login-message"
+            ></div>
+
+
+
+            <!-- FORM -->
+
+            <form id="loginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Gmail
+                    </label>
+
+                    <input
+                        id="email"
+                        class="form-input"
+                        type="email"
+                        placeholder="example@gmail.com"
+                        autocomplete="email"
+                        maxlength="120"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Mật khẩu
+                    </label>
+
+
+                    <div class="input-wrapper">
 
                         <input
-                            id="email"
-                            class="form-input"
-                            type="email"
-                            placeholder="you@example.com"
-                            autocomplete="email"
+                            id="password"
+                            class="form-input password-input"
+                            type="password"
+                            placeholder="Nhập mật khẩu"
+                            autocomplete="current-password"
+                            minlength="8"
                             required
                         >
 
-                    </div>
 
-
-                    <!-- PASSWORD -->
-
-                    <div class="form-group">
-
-                        <label for="password">
-                            Mật khẩu
-                        </label>
-
-                        <div class="input-wrapper">
-
-                            <input
-                                id="password"
-                                class="form-input password-input"
-                                type="password"
-                                placeholder="Nhập mật khẩu"
-                                autocomplete="current-password"
-                                required
-                            >
-
-                            <button
-                                type="button"
-                                class="password-toggle"
-                                id="togglePassword"
-                                aria-label="Hiện mật khẩu"
-                            >
-                                👁
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- OPTIONS -->
-
-                    <div class="form-options">
-
-                        <label class="remember">
-
-                            <input
-                                type="checkbox"
-                                id="remember"
-                            >
-
-                            Ghi nhớ đăng nhập
-
-                        </label>
-
-
-                        <a
-                            href="#"
-                            class="forgot"
-                            id="forgotPassword"
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                            aria-label="Hiện mật khẩu"
                         >
-                            Quên mật khẩu?
-                        </a>
+                            👁
+                        </button>
 
                     </div>
 
-
-                    <!-- BUTTON -->
-
-                    <button
-                        type="submit"
-                        class="login-button"
-                    >
-                        Đăng nhập
-                    </button>
-
-                </form>
-
-
-                <div class="divider">
-                    HOẶC
                 </div>
 
 
-                <div class="register-text">
 
-                    Chưa có tài khoản?
+                <!-- OPTIONS -->
 
-                    <a href="register.html">
-                        Tạo tài khoản
+                <div class="form-options">
+
+
+                    <label class="remember">
+
+                        <input
+                            id="remember"
+                            type="checkbox"
+                        >
+
+                        Ghi nhớ đăng nhập
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        class="forgot"
+                        id="forgotPassword"
+                    >
+                        Quên mật khẩu?
                     </a>
 
                 </div>
 
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton"
+                >
+                    Đăng nhập
+                </button>
+
+            </form>
+
+
+
+            <!-- DIVIDER -->
+
+            <div class="divider">
+                KHANHTECH ACCOUNT
             </div>
 
 
-            <div class="security-note">
-                🔒 Thông tin đăng nhập của bạn được xử lý
-                thông qua hệ thống KhanhTech Account.
+
+            <!-- REGISTER -->
+
+            <div class="register-text">
+
+                Chưa có tài khoản?
+
+                <a href="register.html">
+                    Tạo tài khoản
+                </a>
+
             </div>
 
         </div>
 
-    </main>
 
 
-    <!-- FOOTER -->
+        <!-- SECURITY -->
 
-    <footer class="footer">
+        <div class="security-note">
 
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 KhanhTech.
-                All rights reserved.
-            </span>
+            🔒 Sau khi đăng nhập,
+            KhanhTech sẽ gửi mã OTP 6 số
+            tới Gmail của bạn để xác minh.
 
         </div>
 
-    </footer>
+    </div>
+
+</main>
 
 
-    <script>
 
-        const password =
-            document.getElementById("password");
+<!-- =========================================
+     FOOTER
+========================================= -->
 
-        const togglePassword =
-            document.getElementById("togglePassword");
+<footer class="footer">
 
+    <div class="footer-bottom">
 
-        /* HIỆN / ẨN MẬT KHẨU */
+        <span>
+            © 2026 KhanhTech.
+            All rights reserved.
+        </span>
 
-        togglePassword.addEventListener(
-            "click",
-            () => {
+    </div>
 
-                const isPassword =
-                    password.type === "password";
-
-                password.type =
-                    isPassword
-                        ? "text"
-                        : "password";
-
-                togglePassword.textContent =
-                    isPassword
-                        ? "🙈"
-                        : "👁";
-
-                togglePassword.setAttribute(
-                    "aria-label",
-                    isPassword
-                        ? "Ẩn mật khẩu"
-                        : "Hiện mật khẩu"
-                );
-
-            }
-        );
+</footer>
 
 
-        /* FORM */
 
-        const loginForm =
-            document.getElementById("loginForm");
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
-        const loginMessage =
-            document.getElementById("loginMessage");
-
-
-        loginForm.addEventListener(
-            "submit",
-            (event) => {
-
-                event.preventDefault();
-
-                const email =
-                    document
-                        .getElementById("email")
-                        .value
-                        .trim();
-
-                if (!email) {
-                    return;
-                }
+<script>
 
 
-                loginMessage.style.display =
-                    "block";
+/* =========================================
+   ELEMENTS
+========================================= */
 
-                loginMessage.textContent =
-                    "Giao diện đăng nhập đã hoạt động. Cần kết nối API KhanhTech Account để xác thực tài khoản thật.";
+const loginForm =
+    document.getElementById(
+        "loginForm"
+    );
 
-            }
-        );
+
+const emailInput =
+    document.getElementById(
+        "email"
+    );
 
 
-        /* QUÊN MẬT KHẨU */
+const passwordInput =
+    document.getElementById(
+        "password"
+    );
 
-        document
-            .getElementById("forgotPassword")
-            .addEventListener(
-                "click",
-                (event) => {
 
-                    event.preventDefault();
+const togglePassword =
+    document.getElementById(
+        "togglePassword"
+    );
 
-                    loginMessage.style.display =
-                        "block";
 
-                    loginMessage.textContent =
-                        "Tính năng khôi phục mật khẩu sẽ được kết nối với hệ thống KhanhTech Account.";
+const loginButton =
+    document.getElementById(
+        "loginButton"
+    );
 
-                }
+
+const loginMessage =
+    document.getElementById(
+        "loginMessage"
+    );
+
+
+const forgotPassword =
+    document.getElementById(
+        "forgotPassword"
+    );
+
+
+/* =========================================
+   SHOW MESSAGE
+========================================= */
+
+function showMessage(message) {
+
+    loginMessage.style.display =
+        "block";
+
+    loginMessage.textContent =
+        message;
+
+}
+
+
+/* =========================================
+   PASSWORD SHOW / HIDE
+========================================= */
+
+togglePassword.addEventListener(
+    "click",
+    () => {
+
+        const hidden =
+            passwordInput.type ===
+            "password";
+
+
+        if (hidden) {
+
+            passwordInput.type =
+                "text";
+
+            togglePassword.textContent =
+                "🙈";
+
+            togglePassword.setAttribute(
+                "aria-label",
+                "Ẩn mật khẩu"
             );
 
-    </script>
+        } else {
+
+            passwordInput.type =
+                "password";
+
+            togglePassword.textContent =
+                "👁";
+
+            togglePassword.setAttribute(
+                "aria-label",
+                "Hiện mật khẩu"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+loginForm.addEventListener(
+    "submit",
+    async (event) => {
+
+        event.preventDefault();
+
+
+        const email =
+            emailInput.value
+                .trim()
+                .toLowerCase();
+
+
+        const password =
+            passwordInput.value;
+
+
+        if (
+            !email.endsWith(
+                "@gmail.com"
+            )
+        ) {
+
+            showMessage(
+                "Vui lòng sử dụng địa chỉ Gmail."
+            );
+
+            return;
+
+        }
+
+
+        if (
+            password.length < 8
+        ) {
+
+            showMessage(
+                "Mật khẩu phải có ít nhất 8 ký tự."
+            );
+
+            return;
+
+        }
+
+
+        /*
+         * =====================================
+         * BACKEND SẼ ĐƯỢC KẾT NỐI Ở ĐÂY
+         * =====================================
+         *
+         * Ví dụ:
+         *
+         * const response = await fetch(
+         *     "https://API-KHANHTECH/auth/login",
+         *     {
+         *         method: "POST",
+         *
+         *         headers: {
+         *             "Content-Type":
+         *                 "application/json"
+         *         },
+         *
+         *         body: JSON.stringify({
+         *             email,
+         *             password
+         *         })
+         *     }
+         * );
+         *
+         * const data =
+         *     await response.json();
+         *
+         * Nếu đúng:
+         *
+         * window.location.href =
+         *     "verify.html";
+         */
+
+
+        loginButton.disabled =
+            true;
+
+        loginButton.textContent =
+            "Đang kiểm tra...";
+
+
+        /*
+         * Tạm thời mô phỏng
+         * frontend.
+         */
+
+        setTimeout(
+            () => {
+
+                loginButton.disabled =
+                    false;
+
+                loginButton.textContent =
+                    "Đăng nhập";
+
+
+                showMessage(
+                    "Giao diện đã hoạt động. Backend sẽ kiểm tra tài khoản và gửi OTP 6 số tới Gmail của bạn."
+                );
+
+            },
+            700
+        );
+
+    }
+);
+
+
+/* =========================================
+   FORGOT PASSWORD
+========================================= */
+
+forgotPassword.addEventListener(
+    "click",
+    (event) => {
+
+        event.preventDefault();
+
+
+        showMessage(
+            "Tính năng khôi phục mật khẩu sẽ được kết nối với KhanhTech Account."
+        );
+
+    }
+);
+
+
+</script>
+
 
 </body>
 </html>
