@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Khám phá | KhanhTech</title>
+
+    <meta
+        name="description"
+        content="Khám phá các sản phẩm, dự án và công nghệ của KhanhTech."
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        /* =========================================
+           KHÁM PHÁ
+        ========================================= */
+
+        .discover-page {
+            width: min(
+                calc(100% - 40px),
+                1200px
+            );
+
+            margin: 0 auto;
+
+            padding:
+                150px 0 100px;
+        }
+
+
+        .discover-hero {
+            text-align: center;
+
+            max-width: 850px;
+
+            margin:
+                0 auto 80px;
+        }
+
+
+        .discover-badge {
+            display: inline-flex;
+
+            padding:
+                7px 14px;
+
+            border-radius:
+                999px;
+
+            color:
+                #9d93ff;
+
+            background:
+                rgba(109, 93, 252, 0.10);
+
+            border:
+                1px solid
+                rgba(109, 93, 252, 0.22);
+
+            font-size:
+                12px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                1.5px;
+
+            margin-bottom:
+                20px;
+        }
+
+
+        .discover-hero h1 {
+            font-size:
+                clamp(48px, 7vw, 82px);
+
+            line-height:
+                0.98;
+
+            letter-spacing:
+                -5px;
+        }
+
+
+        .discover-hero h1 span {
+            background:
+                var(--gradient);
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+        }
+
+
+        .discover-hero p {
+            max-width:
+                650px;
+
+            margin:
+                25px auto 0;
+
+            color:
+                var(--text-secondary);
+
+            font-size:
+                17px;
+        }
+
+
+        /* =========================================
+           SEARCH
+        ========================================= */
+
+        .discover-search {
+            max-width:
+                650px;
+
+            margin:
+                35px auto 0;
+
+            position:
+                relative;
+        }
+
+
+        .discover-search input {
+            width: 100%;
+
+            height: 54px;
+
+            padding:
+                0 20px 0 50px;
+
+            border-radius:
+                15px;
+
+            border:
+                1px solid
+                var(--border-strong);
+
+            outline:
+                none;
+
+            background:
+                var(--surface);
+
+            color:
+                var(--text);
+
+            font-size:
+                14px;
+        }
+
+
+        .discover-search input:focus {
+            border-color:
+                var(--accent);
+
+            box-shadow:
+                0 0 0 4px
+                rgba(109, 93, 252, 0.10);
+        }
+
+
+        .search-icon {
+            position:
+                absolute;
+
+            left:
+                18px;
+
+            top:
+                50%;
+
+            transform:
+                translateY(-50%);
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                18px;
+        }
+
+
+        /* =========================================
+           CATEGORY
+        ========================================= */
+
+        .discover-categories {
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                10px;
+
+            margin-bottom:
+                45px;
+        }
+
+
+        .category {
+            padding:
+                9px 16px;
+
+            border-radius:
+                999px;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                var(--surface);
+
+            color:
+                var(--text-secondary);
+
+            cursor:
+                pointer;
+
+            font-size:
+                13px;
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .category:hover,
+        .category.active {
+            color:
+                white;
+
+            background:
+                var(--accent);
+
+            border-color:
+                var(--accent);
+        }
+
+
+        /* =========================================
+           DISCOVER GRID
+        ========================================= */
+
+        .discover-grid {
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                20px;
+        }
+
+
+        .discover-card {
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            min-height:
+                330px;
+
+            padding:
+                30px;
+
+            border-radius:
+                24px;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--surface),
+                    var(--bg-secondary)
+                );
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .discover-card:hover {
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(109, 93, 252, 0.4);
+        }
+
+
+        .discover-card::before {
+            content: "";
+
+            position:
+                absolute;
+
+            width:
+                180px;
+
+            height:
+                180px;
+
+            top:
+                -90px;
+
+            right:
+                -90px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(109, 93, 252, 0.15);
+
+            filter:
+                blur(50px);
+        }
+
+
+        .discover-icon {
+            width:
+                52px;
+
+            height:
+                52px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                15px;
+
+            background:
+                var(--gradient);
+
+            color:
+                white;
+
+            font-size:
+                18px;
+
+            font-weight:
+                900;
+
+            margin-bottom:
+                30px;
+        }
+
+
+        .discover-card h2 {
+            font-size:
+                23px;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .discover-card p {
+            color:
+                var(--text-secondary);
+
+            font-size:
+                14px;
+
+            margin-bottom:
+                25px;
+        }
+
+
+        .discover-card a {
+            color:
+                #958cff;
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+        }
+
+
+        /* =========================================
+           FEATURED
+        ========================================= */
+
+        .featured {
+            grid-column:
+                span 2;
+
+            min-height:
+                390px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(109, 93, 252, 0.22),
+                    transparent 40%
+                ),
+                var(--surface);
+        }
+
+
+        .featured h2 {
+            font-size:
+                34px;
+        }
+
+
+        .featured .discover-icon {
+            width:
+                64px;
+
+            height:
+                64px;
+
+            font-size:
+                24px;
+        }
+
+
+        /* =========================================
+           EMPTY SEARCH
+        ========================================= */
+
+        .no-results {
+            display:
+                none;
+
+            text-align:
+                center;
+
+            padding:
+                70px 20px;
+
+            color:
+                var(--text-muted);
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            .discover-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .featured {
+                grid-column:
+                    span 2;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .discover-page {
+                width:
+                    calc(100% - 24px);
+
+                padding-top:
+                    120px;
+            }
+
+            .discover-hero h1 {
+                font-size:
+                    48px;
+
+                letter-spacing:
+                    -3px;
+            }
+
+            .discover-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .featured {
+                grid-column:
+                    span 1;
+            }
+
+            .discover-card {
+                min-height:
+                    280px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                KHANHTECH
+            </a>
+
+            <nav class="nav-menu">
+
+                <a href="index.html">
+                    Trang chủ
+                </a>
+
+                <a href="khanhos.html">
+                    Khám phá
+                </a>
+
+                <a href="account/login.html">
+                    Account
+                </a>
+
+            </nav>
+
+            <div class="nav-actions">
+
+                <a
+                    href="account/login.html"
+                    class="btn btn-secondary"
+                >
+                    Đăng nhập
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="discover-page">
+
+
+        <!-- HERO -->
+
+        <section class="discover-hero">
+
+            <div class="discover-badge">
+                KHANHTECH DISCOVER
+            </div>
+
+            <h1>
+                Khám phá
+                <span>KhanhTech.</span>
+            </h1>
+
+            <p>
+                Tìm hiểu các sản phẩm, hệ điều hành,
+                dự án và công nghệ đang được phát triển
+                trong hệ sinh thái KhanhTech.
+            </p>
+
+
+            <!-- SEARCH -->
+
+            <div class="discover-search">
+
+                <span class="search-icon">
+                    🔎
+                </span>
+
+                <input
+                    id="discoverSearch"
+                    type="search"
+                    placeholder="Tìm kiếm sản phẩm, dự án..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORY -->
+
+        <div class="discover-categories">
+
+            <button
+                class="category active"
+                data-category="all"
+            >
+                Tất cả
+            </button>
+
+            <button
+                class="category"
+                data-category="os"
+            >
+                Hệ điều hành
+            </button>
+
+            <button
+                class="category"
+                data-category="software"
+            >
+                Phần mềm
+            </button>
+
+            <button
+                class="category"
+                data-category="project"
+            >
+                Dự án
+            </button>
+
+            <button
+                class="category"
+                data-category="tools"
+            >
+                Công cụ
+            </button>
+
+        </div>
+
+
+        <!-- CARDS -->
+
+        <section
+            class="discover-grid"
+            id="discoverGrid"
+        >
+
+
+            <!-- KHANHOS -->
+
+            <article
+                class="discover-card featured"
+                data-category="os"
+                data-search="khanhos hệ điều hành operating system windows"
+            >
+
+                <div class="discover-icon">
+                    K
+                </div>
+
+                <h2>
+                    KhanhOS
+                </h2>
+
+                <p>
+                    Hệ điều hành được phát triển
+                    trong hệ sinh thái KhanhTech,
+                    hướng tới trải nghiệm hiện đại,
+                    nhẹ và dễ sử dụng.
+                </p>
+
+                <a href="#">
+                    Khám phá KhanhOS →
+                </a>
+
+            </article>
+
+
+            <!-- KHANHTECH -->
+
+            <article
+                class="discover-card"
+                data-category="software"
+                data-search="khanhtech software phần mềm"
+            >
+
+                <div class="discover-icon">
+                    KT
+                </div>
+
+                <h2>
+                    KhanhTech
+                </h2>
+
+                <p>
+                    Nền tảng công nghệ tập trung
+                    vào phần mềm, hệ điều hành
+                    và các sản phẩm số.
+                </p>
+
+                <a href="index.html">
+                    Xem hệ sinh thái →
+                </a>
+
+            </article>
+
+
+            <!-- TOOLS -->
+
+            <article
+                class="discover-card"
+                data-category="tools"
+                data-search="tools công cụ tiện ích"
+            >
+
+                <div class="discover-icon">
+                    ⚙
+                </div>
+
+                <h2>
+                    KhanhTech Tools
+                </h2>
+
+                <p>
+                    Bộ công cụ hỗ trợ người dùng
+                    quản lý, tối ưu và sử dụng
+                    các sản phẩm KhanhTech.
+                </p>
+
+                <a href="#">
+                    Xem công cụ →
+                </a>
+
+            </article>
+
+
+            <!-- PROJECT -->
+
+            <article
+                class="discover-card"
+                data-category="project"
+                data-search="project dự án phát triển"
+            >
+
+                <div class="discover-icon">
+                    &
+                </div>
+
+                <h2>
+                    Dự án
+                </h2>
+
+                <p>
+                    Theo dõi các dự án đang được
+                    nghiên cứu và phát triển.
+                </p>
+
+                <a href="#">
+                    Xem dự án →
+                </a>
+
+            </article>
+
+
+            <!-- ACCOUNT -->
+
+            <article
+                class="discover-card"
+                data-category="software"
+                data-search="account tài khoản người dùng"
+            >
+
+                <div class="discover-icon">
+                    👤
+                </div>
+
+                <h2>
+                    KhanhTech Account
+                </h2>
+
+                <p>
+                    Một tài khoản cho các sản phẩm
+                    và dịch vụ trong hệ sinh thái
+                    KhanhTech.
+                </p>
+
+                <a href="account/login.html">
+                    Đăng nhập →
+                </a>
+
+            </article>
+
+
+            <!-- FUTURE -->
+
+            <article
+                class="discover-card"
+                data-category="project"
+                data-search="future tương lai sản phẩm mới"
+            >
+
+                <div class="discover-icon">
+                    +
+                </div>
+
+                <h2>
+                    Sản phẩm sắp tới
+                </h2>
+
+                <p>
+                    Những sản phẩm và ý tưởng mới
+                    đang được lên kế hoạch.
+                </p>
+
+                <a href="#">
+                    Sắp ra mắt →
+                </a>
+
+            </article>
+
+        </section>
+
+
+        <div
+            class="no-results"
+            id="noResults"
+        >
+            Không tìm thấy nội dung phù hợp.
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    KHANHTECH
+                </div>
+
+                <p>
+                    Technology for the next generation.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Khám phá
+                </h4>
+
+                <a href="khanhos.html">
+                    KhanhOS
+                </a>
+
+                <a href="#">
+                    Dự án
+                </a>
+
+                <a href="#">
+                    Công cụ
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Tài khoản
+                </h4>
+
+                <a href="account/login.html">
+                    Đăng nhập
+                </a>
+
+                <a href="account/register.html">
+                    Đăng ký
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    KhanhTech
+                </h4>
+
+                <a href="index.html">
+                    Trang chủ
+                </a>
+
+                <a href="#">
+                    Liên hệ
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 KhanhTech.
+                All rights reserved.
+            </span>
+
+            <div>
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         SCRIPT
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        /* =========================================
+           DISCOVER SEARCH
+        ========================================== */
+
+        const search =
+            document.getElementById(
+                "discoverSearch"
+            );
+
+        const cards =
+            document.querySelectorAll(
+                ".discover-card"
+            );
+
+        const noResults =
+            document.getElementById(
+                "noResults"
+            );
+
+
+        function filterCards() {
+
+            const query =
+                search.value
+                    .toLowerCase()
+                    .trim();
+
+            let visible =
+                0;
+
+
+            cards.forEach(card => {
+
+                const text =
+                    (
+                        card.dataset.search ||
+                        ""
+                    ).toLowerCase();
+
+
+                if (
+                    !query ||
+                    text.includes(query)
+                ) {
+
+                    card.style.display =
+                        "";
+
+                    visible++;
+
+                } else {
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            });
+
+
+            noResults.style.display =
+                visible === 0
+                    ? "block"
+                    : "none";
+        }
+
+
+        search.addEventListener(
+            "input",
+            filterCards
+        );
+
+
+        /* =========================================
+           CATEGORY FILTER
+        ========================================== */
+
+        const categories =
+            document.querySelectorAll(
+                ".category"
+            );
+
+
+        categories.forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    categories.forEach(
+                        item => {
+                            item.classList.remove(
+                                "active"
+                            );
+                        }
+                    );
+
+
+                    button.classList.add(
+                        "active"
+                    );
+
+
+                    const category =
+                        button.dataset.category;
+
+
+                    let visible =
+                        0;
+
+
+                    cards.forEach(card => {
+
+                        const matches =
+                            category === "all" ||
+                            card.dataset.category ===
+                            category;
+
+
+                        if (matches) {
+
+                            card.style.display =
+                                "";
+
+                            visible++;
+
+                        } else {
+
+                            card.style.display =
+                                "none";
+
+                        }
+
+                    });
+
+
+                    noResults.style.display =
+                        visible === 0
+                            ? "block"
+                            : "none";
+
+
+                    search.value =
+                        "";
+
+                }
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
