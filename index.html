@@ -65,6 +65,13 @@
 
             <div class="hero-content">
 
+                <!-- KHANHTECH LOGO -->
+                <img
+                    src="logo.png"
+                    alt="KhanhTech Logo"
+                    class="hero-logo"
+                >
+
                 <span class="hero-badge">
                     KHANHTECH
                 </span>
@@ -735,4 +742,38 @@
 
 </body>
 </html>
+```
+
+**Nhớ:** đặt `logo.png` **cùng thư mục với `index.html`**:
+
+```text
+KhanhTech/
+├── index.html
+├── style.css
+├── script.js
+└── logo.png
+```
+
+Và trong `style.css` thêm:
+
+```css
+.hero-logo {
+    width: 260px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto 24px;
+}
+```
+
+Nếu `.hero-content` của mày đang **căn trái**, đổi `margin` thành:
+
+```css
+.hero-logo {
+    width: 260px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 0 24px;
+}
 ```
